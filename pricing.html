@@ -44,6 +44,7 @@
             }
         }
     </script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -320,35 +321,35 @@
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">Get Started Today</h2>
                     <p class="text-xl text-gray-600">Fill out the form below and we'll set up your first scan within 24 hours</p>
                 </div>
-                
+
                 <div class="bg-gradient-to-br from-cyber-50 to-teal-50 p-10 rounded-2xl shadow-xl">
-                    <form action="https://inputbloc.com/api/submit" method="POST" class="space-y-6">
+                    <form action="https://inputbloc.com/submit/sArUKv3" method="POST" class="space-y-6">
                         <!-- Hidden field for inputbloc token - user will add their token -->
                         <input type="hidden" name="token" value="YOUR_INPUTBLOC_TOKEN_HERE">
                         
                         <div>
                             <label for="name" class="block text-gray-900 font-semibold mb-2">Full Name *</label>
                             <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
+                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
                         </div>
                         
                         <div>
                             <label for="email" class="block text-gray-900 font-semibold mb-2">Email Address *</label>
                             <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
+                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
                         </div>
                         
                         <div>
                             <label for="company" class="block text-gray-900 font-semibold mb-2">Company Name</label>
                             <input type="text" id="company" name="company" 
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
+                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
                         </div>
                         
                         <div>
                             <label for="website" class="block text-gray-900 font-semibold mb-2">Website/Application URL *</label>
                             <input type="url" id="website" name="website" required 
-                                   placeholder="https://example.com"
-                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
+                                placeholder="https://example.com"
+                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition">
                         </div>
                         
                         <div>
@@ -365,8 +366,13 @@
                         <div>
                             <label for="message" class="block text-gray-900 font-semibold mb-2">Additional Information</label>
                             <textarea id="message" name="message" rows="4" 
-                                      class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition"
-                                      placeholder="Any specific security concerns or requirements?"></textarea>
+                                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-cyber-500 focus:outline-none transition"
+                                    placeholder="Any specific security concerns or requirements?"></textarea>
+                        </div>
+                        
+                        <!-- Cloudflare Turnstile -->
+                        <div class="flex justify-center">
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAACAFoO1QI2pyxfD9"></div>
                         </div>
                         
                         <button type="submit" 
