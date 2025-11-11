@@ -109,11 +109,18 @@
                     <a href="/pricing" class="text-gray-700 hover:text-cyber-600 transition">Pricing</a>
                     <a href="/pricing#contact" class="bg-gradient-to-r from-cyber-600 to-teal-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">Get Started</a>
                 </div>
-                <button class="md:hidden text-gray-700">
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="#features" class="block text-gray-700 hover:text-cyber-600 transition py-2">Features</a>
+                <a href="#security-stats" class="block text-gray-700 hover:text-cyber-600 transition py-2">Why Security Matters</a>
+                <a href="/pricing" class="block text-gray-700 hover:text-cyber-600 transition py-2">Pricing</a>
+                <a href="/pricing#contact" class="block bg-gradient-to-r from-cyber-600 to-teal-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition text-center">Get Started</a>
             </div>
         </nav>
     </header>
@@ -519,5 +526,13 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
